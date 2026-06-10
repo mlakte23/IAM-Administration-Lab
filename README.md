@@ -13,15 +13,15 @@ This environment is themed around the Destiny universe: A game that has meant a 
  
 ## Why Destiny?
  
-The Destiny franchise is special to me. I have never been so invested in a game in my entire life. It started in fifth grade and never really let go. The music, the scenery, the lore, the world-building — everything about it captivated me in a way nothing else has. It felt like more than a game; it felt like a place I could escape to when I felt like it and just vibe.
+The Destiny franchise is special to me. I have never been so invested in a game in my entire life. It started in fifth grade and I never really let go. The music, the scenery, the lore, the world-building — everything about it captivated me in a way nothing else has. It felt like more than a game; it felt like a place I could escape to whenever I felt like it and just vibe.
  
-Fast-forwarding to 2026, the franchise has met an uncertain conclusion, but there is no denying the impact it has had on my life. It will forever hold a place in who I am. Bringing it into a cybersecurity project was spontaneous and felt like the right way to honor that.
+Fast-forwarding to 2026, the franchise has met an uncertain conclusion, but there is no denying the impact it has had on my life. It will forever hold a place in who I am. Bringing Destiny into a cybersecurity project was spontaneous and felt like the right way to honor the game.
  
 ---
  
 ## Phase 1 — Tenant Setup & Orientation
  
-The first step was navigating to Microsoft Entra ID inside the Azure Portal and confirming the default tenant was active and ready. The overview page shows the tenant name, ID, primary domain, license tier, and a baseline count of users, groups, applications, and devices — essentially the starting state of the environment before any configuration.
+The first step was navigating to Microsoft Entra ID inside the Azure Portal and confirming the default tenant was active and ready. The overview page shows the tenant name, ID, primary domain, license tier, and a baseline count of users, groups, applications, and devices — essentially the naked state of the environment before any configuration.
  
 ![Entra ID Overview](screenshots/01-entra-id-overview.png)
  
@@ -54,7 +54,7 @@ With users created, I organized each Guardian into their respective faction grou
  
 ## Phase 4 — Role-Based Access Control (RBAC)
  
-This phase is where the principle of least privilege comes into practice. Each Guardian was assigned only the role their responsibilities require andnothing more. Im actually baffled of the amount of roles Entra ID has listed with all their different functions.
+This phase is where the principle of least privilege comes into practice. Each Guardian was assigned only the role their responsibilities require and nothing more. Im actually baffled of the amount of roles Entra ID has listed with all their different functions.
  
  
 ![Directory Roles List](screenshots/06-directory-roles-list.png)
@@ -69,7 +69,7 @@ This phase is where the principle of least privilege comes into practice. Each G
  
 Enabling per-user MFA requires Microsoft Entra ID Premium , which is beyond the free tier. Hitting this wall was a useful reminder of where the free tier ends and where enterprise licensing begins. As an alternative, I searched for another security option and found a security defaults tab. I made sure that security defaults were enabled.
  
-This is the configuration Microsoft recommends for organizations that do not yet have a remium license, and it is probably what many small and mid-size businesses run in production.
+This is the configuration Microsoft recommends for organizations that do not yet have a premium license, and it is probably what many small and mid-size businesses run in production.
  
 Note: The Security Defaults panel states that MFA protects against 99.9% of account compromise attempts, while Security Defaults alone reduces compromise rates by 80%. That gap is the business case for upgrading to Premium and implementing Conditional Access policies in a real environment.
  
@@ -103,7 +103,7 @@ With the environment fully configured, I reviewed the audit and sign-in logs to 
  
 ![Audit Logs](screenshots/09-audit-logs.png)
  
-**Sign-In Logs** showed every authentication event against the tenant, including the user principal name, application accessed, IP address, and geographic location. The Conditional Access column showed "Not applied" throughout — expected on the free tier, but in a Premium environment this is where policies would be evaluated and enforced in real time.
+**Sign-In Logs** showed every authentication event against the tenant, including the user principal name, application accessed, IP address, and geographic location.
  
 ![Sign-In Logs](screenshots/10-signin-logs.png)
  
